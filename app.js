@@ -27,9 +27,9 @@ io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
 
   socket.on('register',(data)=>{
-    if(onlineUsers.find((user)=>user.name===data.username)){
+    if(onlineUsers.find((user)=>user.name===data)){
       null
-    }else{ onlineUsers.push({socketId:socket.id,name:data.username})
+    }else{ onlineUsers.push({socketId:socket.id,name:data})
       io.emit('onlineusers',onlineUsers)
     }
   })

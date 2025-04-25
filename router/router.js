@@ -5,9 +5,10 @@ router.post('/createaccount',async(req,res)=>{
   try{
     const username=req.body.username
 if(username){
-
   const newuser=username
   if(newuser){
+    console.log(username)
+    
     res.status(200).json({message:"user created",success:true,data:newuser})
   }else{
     res.status(400).json({message:"user not created",success:false})
